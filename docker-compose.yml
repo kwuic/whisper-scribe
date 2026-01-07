@@ -1,0 +1,54 @@
+# =============================================================================
+# Docker Compose for Whisper Scribe with GPU
+# =============================================================================
+# Usage:
+#   docker compose run --rm transcribe /data/video.mp4
+#   docker compose run --rm transcribe /data/video.mp4 -o /data/output.srt
+#   docker compose run --rm transcribe /data/video.mp4 --simple
+# =============================================================================
+
+services:
+  transcribe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: whisper-scribe:latest
+
+    # NVIDIA GPU support
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    # Environment variables
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - NVIDIA_VISIBLE_DEVICES=all
+
+    # Mount data folder for input/output files
+    volumes:
+      - ./data:/data
+
+    # Stdin for interactions (optional)
+    stdin_open: true
+    tty: true
+
+  # Alternative service without GPU (CPU only)
+  transcribe-cpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: whisper-scribe:latest
+
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+
+    volumes:
+      - ./data:/data
+
+    # Force CPU mode
+    command: ["--help"]
+    entrypoint: ["python", "transcribe.py", "-d", "cpu"]

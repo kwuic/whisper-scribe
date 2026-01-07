@@ -1,0 +1,17 @@
+# Transcription avec identification des locuteurs
+# PyTorch avec CUDA (installé automatiquement par whisperx)
+torch>=2.5.0
+torchaudio>=2.5.0
+
+# Transcription
+whisperx>=3.7.0
+faster-whisper>=1.0.0  # Pour le mode --simple (sans diarization)
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0  # Chargement des variables depuis .env
+
+# Pour la diarization (identification des locuteurs), vous devez:
+# 1. Créer un compte sur https://huggingface.co
+# 2. Accepter les conditions sur https://huggingface.co/pyannote/speaker-diarization-3.1
+# 3. Définir la variable HF_TOKEN avec votre token

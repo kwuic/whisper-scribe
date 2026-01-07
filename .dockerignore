@@ -1,0 +1,67 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Secrets et config locale
+.env
+config.yaml
+
+# Fichiers de sauvegarde
+bak/
+*.bak
+*.backup
+*~
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Documentation (pas necessaire dans l'image)
+*.md
+!README.md
+
+# Fichiers media de test
+*.mp4
+*.mp3
+*.wav
+*.mkv
+*.avi
+*.mov
+*.srt
+
+# Modeles (seront telecharges au runtime)
+*.pt
+*.bin
+*.onnx
+models/
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+tests/
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,3 @@
+# Ce dossier contient les fichiers audio/video a transcrire
+# et les fichiers SRT generes.
+# Les fichiers media sont ignores par git (.gitignore)

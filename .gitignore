@@ -1,0 +1,97 @@
+# Environnements virtuels Python
+.venv/
+venv/
+env/
+ENV/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Secrets et configuration locale
+.env
+config.yaml
+
+# Fichiers de sauvegarde
+bak/
+*.bak
+*.backup
+*~
+
+# Fichiers temporaires
+*.tmp
+*.temp
+.cache/
+
+# Modeles telecharges (volumineux)
+*.pt
+*.bin
+*.onnx
+models/
+
+# Fichiers audio/video de test
+*.mp4
+*.mp3
+*.wav
+*.mkv
+*.avi
+*.mov
+*.flac
+*.ogg
+*.m4a
+
+# Fichiers de sortie
+*.srt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch
+*.pth
+
+# Logs
+*.log
+logs/
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
